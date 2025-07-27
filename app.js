@@ -34,4 +34,7 @@ function choicePeople() {
 }
 const randomPeoples = choicePeople();
 
-console.log(randomPeoples);
+fs.writeFile('peopleLists.txt', randomPeoples, (err) => {
+  if (err) throw err;
+  console.log('File has been successfully generated! Check people.json');
+});
